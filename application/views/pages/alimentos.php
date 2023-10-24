@@ -8,7 +8,7 @@
 					<div class="card shadow">
 						<div class="card-header border-0 d-flex justify-content-between">
 							<h2 class="mb-0 ">Alimentos</h3>
-							<button class="btn btn-outline-success" type="button">+Alimento</button>
+								<button class="btn btn-outline-success" type="button">+Alimento</button>
 						</div>
 						<div class="table-responsive">
 							<table class="table align-items-center table-flush">
@@ -23,16 +23,16 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
 									<?php foreach ($alimentos as $alimento) : ?>
-										<td><?= $alimento['id'] ?></td>
-										<td><?= $alimento['alimento'] ?></td>
-										<td><?= $alimento['carboidratos'] ?></td>
-										<td><?= $alimento['proteinas'] ?></td>
-										<td><?= $alimento['gorduras'] ?></td>
-										<td><?= $alimento['calorias'] ?></td>
-										<?php endforeach; ?>
-									</tr>
+										<tr>
+											<td><?= $alimento['id'] ?></td>
+											<td><?= $alimento['alimento'] ?></td>
+											<td><?= $alimento['carboidratos'] ?></td>
+											<td><?= $alimento['proteinas'] ?></td>
+											<td><?= $alimento['gorduras'] ?></td>
+											<td><?= $alimento['calorias'] ?></td>
+										</tr>
+									<?php endforeach; ?>
 								</tbody>
 							</table>
 						</div>
