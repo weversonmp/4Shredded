@@ -1,0 +1,32 @@
+@font-face {
+	font-family: "Stranger back in the Night";
+	src: url("../tff/Stranger\ back\ in\ the\ Night.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+	--navbar-dark-gray: #222327;
+	--body-dark-gray-2: #2a2b2f;
+}
+
+body {
+	background-color: var(--body-dark-gray-2);
+}
+
+#navbar {
+	background-color: var(--navbar-dark-gray);
+}
+
+.navbar-brand {
+	padding: 3px;
+	color: white;
+	font-style: italic;
+	/* font-family: "Stranger back in the Night"; */
+	/* font-size: 3rem; */
+}
+
+.navbar-brand img {
+	width: 40px;
+	border-radius: 10%;
+}
