@@ -1,0 +1,78 @@
+@font-face {
+
+	font-family: "Exo 2 Bold";
+	src: url("../tff/Exo2-Bold.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+
+	font-family: "Exo 2 SemiBold";
+	src: url("../tff/Exo2-SemiBold.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+
+}
+@font-face {
+
+	font-family: "Exo 2 Medium";
+	src: url("../tff/Exo2-Medium.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+	--body-dark-gray-1: #2a2b2f;
+	--body-dark-gray-2: #2a2b2f;
+	--navbar-dark-gray: #1c1d22;
+	--navbar-border-dark: #0e0f11;
+	--navbar-icon-off-focus: #555659;
+	--navbar-icon-on-focus: white;
+}
+
+body {
+	color: white;
+	font-family: "Exo 2 Medium", sans-serif;
+}
+
+h2 {
+	font-family: "Exo 2 Bold", sans-serif;
+}
+
+.body-dark-gray-1 {
+	background-color: var(--body-dark-gray-1);
+}
+
+.body-dark-gray-2 {
+	background-color: var(--body-dark-gray-2);
+}
+
+#idheader {
+	box-shadow: black 1px 1px 10px;
+}
+
+.navbar-dark-gray {
+	background-color: var(--navbar-dark-gray);
+}
+
+.navbar-border-dark {
+	background-color: var(--navbar-border-dark);
+}
+
+[navbar-icon-on-focus] {
+	color: var(--navbar-icon-on-focus);
+	border: 2px solid rgba(0, 0, 0, 0.267);
+	border-radius: 50%;
+	padding: 15px;
+	background-color: #333438;
+	box-shadow: rgba(128, 128, 128, 0.705) 1px 1px 10px;
+}
+
+[navbar-icon-off-focus] {
+	color: var(--navbar-icon-off-focus);
+}
+
+#img-brand {
+	width: 4em;
+	border-radius: 50%;
+}

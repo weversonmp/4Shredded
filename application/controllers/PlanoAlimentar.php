@@ -14,6 +14,6 @@ class PlanoAlimentar extends CI_Controller
 	public function index()
 	{
 		$data['title'] = "Plano Alimentar";
-		$this->load->view('pages/planoAlimentar', $data);
+		$this->load->view('pages/planoAlimentar_view', $data);
 	}
 }
