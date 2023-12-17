@@ -25,4 +25,9 @@ class PlanoAlimentar extends CI_Controller
 		$data['alimentosAdicionados'] = '';
 		$this->load->view('pages/planoAlimentar_view', $data);
 	}
+
+	public function foodsAutoComplete()
+	{
+		$this->alimentos->
+	}
 }

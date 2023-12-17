@@ -163,6 +163,8 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
 	<!-- Font Awesome -->
 	<!-- <script src="https://kit.fontawesome.com/d412feebf6.js" crossorigin="anonymous"></script> -->
@@ -202,9 +204,13 @@
 			sessionStorage.setItem("inputValueToAdd", input.value);
 			if (input.value.length > 2) {
 				let values = sessionStorage.getItem("inputValueToAdd")
-				console.log('<?php $this->foodReturned; ?>')
+				console.log(values)
 
 			}
+		});
+
+		$("#ovo1").autocomplete({
+			source: '<?= $tb_foods ?>'
 		});
 	</script>
 </body>

@@ -81,6 +81,10 @@ body {
 	border-radius: 10px;
 }
 
+#divAutocomplete {
+	width: 15.72em;
+}
+
 #ovo1 {
 	background: none;
 	border: none;
