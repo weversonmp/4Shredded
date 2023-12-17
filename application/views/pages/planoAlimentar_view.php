@@ -1,3 +1,11 @@
+<?php
+// echo '<pre>';
+// $this->food_name = 'ovo';
+// $ovo = $this->alimentos->getAutocompleteFood($this->food_name);
+// print_r($ovo);
+// exit;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +69,7 @@
 		<?php if (!$alimentosAdicionados) : ?>
 			<div class="mt-3" id="foodCard">
 				<div class=" card-body">
-					<input id="<?= $tb_foods[0]['food_name'] ?>" class=" card-title" value="<?= $tb_foods[0]['food_name'] ?>">
+					<input id="ovo1" class="mb-2" value="<?= $tb_foods[0]['food_name'] ?>">
 					<div class="d-flex gap-4">
 						<h6 class="card-subtitle mb-2 text-muted">C: </h6>
 						<h6 class="card-subtitle mb-2 text-muted">P: </h6>
@@ -159,7 +167,22 @@
 	<!-- Font Awesome -->
 	<!-- <script src="https://kit.fontawesome.com/d412feebf6.js" crossorigin="anonymous"></script> -->
 
-	<script>
+	<?php
+	function getInputValue()
+	{
+		echo "<script>
+				function getInputValue(idOfInput = 'ovo1') {
+					const input = document.querySelector(`#ovo1`);
+					return input.value;
+				}
+
+				let inputValueGot = getInputValue();
+				</script>
+			";
+	}
+	?>
+
+	<script defer>
 		// const teste = document.querySelector('#testelink')
 		// if (teste.attributes['navbar-icon-off-focus']) {
 		// 	console.log('existe');
@@ -172,12 +195,15 @@
 		// } else {console.log('n existe')}
 
 
-		const input = document.querySelector('#ovo');
+
+		const input = document.querySelector('#ovo1');
 
 		input.addEventListener('keyup', (ev) => {
+			sessionStorage.setItem("inputValueToAdd", input.value);
 			if (input.value.length > 2) {
-				console.log(`<?php $teste = $this->teste();
-				print_r($teste) ?>`)
+				let values = sessionStorage.getItem("inputValueToAdd")
+				console.log('<?php $this->foodReturned; ?>')
+
 			}
 		});
 	</script>

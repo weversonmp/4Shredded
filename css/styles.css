@@ -80,3 +80,19 @@ body {
 	border: 1px solid rgba(128, 128, 128, 0.318);
 	border-radius: 10px;
 }
+
+#ovo1 {
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgba(128, 128, 128, 0.4);
+	width: 10.5em;
+	color: white;
+	font-family: var(--exo-2-sb);
+	font-size: 1.5em;
+	transition: 500ms;
+}
+
+#ovo1:focus {
+	outline: none;
+	border-bottom: 2px solid rgba(190, 78, 33, 0.795);
+}
