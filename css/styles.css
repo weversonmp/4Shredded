@@ -1,20 +1,16 @@
 @font-face {
-
 	font-family: "Exo 2 Bold";
 	src: url("../tff/Exo2-Bold.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
-
 	font-family: "Exo 2 SemiBold";
 	src: url("../tff/Exo2-SemiBold.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
-
 }
 @font-face {
-
 	font-family: "Exo 2 Medium";
 	src: url("../tff/Exo2-Medium.ttf") format("truetype");
 	font-weight: normal;
@@ -22,21 +18,22 @@
 }
 
 :root {
-	--body-dark-gray-1: #2a2b2f;
-	--body-dark-gray-2: #2a2b2f;
+	--body-dark-gray-1: #222327;
+	--body-dark-gray-2: #24262c;
+	--body-dark-gray-3: #2a2b2f;
 	--navbar-dark-gray: #1c1d22;
 	--navbar-border-dark: #0e0f11;
 	--navbar-icon-off-focus: #555659;
 	--navbar-icon-on-focus: white;
+	--exo-2-b: "Exo 2 Bold", sans-serif;
+	--exo-2-sb: "Exo 2 SemiBold", sans-serif;
+	--exo-2-m: "Exo 2 Medium", sans-serif;
 }
 
 body {
+	background-color: var(--body-dark-gray-3);
 	color: white;
-	font-family: "Exo 2 Medium", sans-serif;
-}
-
-h2 {
-	font-family: "Exo 2 Bold", sans-serif;
+	font-family: var(--exo-2-m);
 }
 
 .body-dark-gray-1 {
@@ -75,4 +72,11 @@ h2 {
 #img-brand {
 	width: 4em;
 	border-radius: 50%;
+}
+
+#foodCard {
+	background-color: var(--body-dark-gray-2);
+	width: 18rem;
+	border: 1px solid rgba(128, 128, 128, 0.318);
+	border-radius: 10px;
 }

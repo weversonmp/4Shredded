@@ -21,10 +21,10 @@
 
 </head>
 
-<body class="body-dark-gray-1">
-	<header class="d-flex flex-column position-absolute h-100 flex-shrink-0 navbar-dark-gray" style="width: 4.5rem;" id="idheader">
+<body d-flex">
+	<header class="d-flex flex-column position-absolute  vh-100 flex-shrink-0 navbar-dark-gray" style="width: 4.5rem;" id="idheader">
 		<nav class="d-flex flex-column text-center h-100 my-4 justify-content-between">
-			<div class="d-flex flex-column ">
+			<div class="d-flex flex-column">
 				<div class="mb-5 mt-3">
 					<a href="#">
 						<img id="img-brand" src="<?= base_url() ?>img/brand11.jpeg" alt="">
@@ -55,57 +55,53 @@
 		</nav>
 	</header>
 
-	<main class="container ">
-		<h2>Refeições</h2>
-		<div class="d-flex">
+	<main class="w-75 m-auto pt-4">
+		<h2 class="">Refeições</h2>
 
-			<div class="col-lg-5">
-				<div class="d-flex flex-wrap gap-3">
-					<div class="d-flex flex-column">
-						<label for="food1">Nome:</label>
-						<input class="" type="search" id="food1">
+		<?php if (!$alimentosAdicionados) : ?>
+			<div class="mt-3" id="foodCard">
+				<div class=" card-body">
+					<input id="<?= $tb_foods[0]['food_name'] ?>" class=" card-title" value="<?= $tb_foods[0]['food_name'] ?>">
+					<div class="d-flex gap-4">
+						<h6 class="card-subtitle mb-2 text-muted">C: </h6>
+						<h6 class="card-subtitle mb-2 text-muted">P: </h6>
+						<h6 class="card-subtitle mb-2 text-muted">G: </h6>
+						<h6 class="card-subtitle mb-2 text-muted">Kcal: </h6>
 					</div>
-					<div class="d-flex flex-column col-1">
-						<label>Carb:</label>
-						<input class="" type="text" id="carbResult1" readonly>
-					</div>
-					<div class="d-flex flex-column col-1">
-						<label>Prot:</label>
-						<input class="col-12" type="text" id="protResult1" readonly>
-					</div>
-					<div class="d-flex flex-column col-1">
-						<label>Gord:</label>
-						<input class="col-12" type="text" id="gordResult1" readonly>
-					</div>
-					<div class="d-flex flex-column col-2">
-						<label>Kcal:</label>
-						<input class="col-12" type="text" id="kcalResult1" readonly>
-					</div>
+					<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+					<a href="#" class="card-link">Info</a>
+					<a href="#" class="card-link">Remover</a>
 				</div>
-				<div class="d-flex flex-wrap gap-3">
-					<div class="d-flex flex-column">
-						<label for="food2">Nome:</label>
-						<input class="col-12" type="text" id="food2">
-					</div>
-					<div class="d-flex flex-column col-1">
-						<label>Carb:</label>
-						<input class="" type="text" id="carbResult2" readonly>
-					</div>
-					<div class="d-flex flex-column col-1">
-						<label>Prot:</label>
-						<input class="col-12" type="text" id="protResult2" readonly>
-					</div>
-					<div class="d-flex flex-column col-1">
-						<label>Gord:</label>
-						<input class="col-12" type="text" id="gordResult2" readonly>
-					</div>
-					<div class="d-flex flex-column col-2">
-						<label>Kcal:</label>
-						<input class="col-12" type="text" id="carbResult2" readonly>
+			</div>
+		<?php endif ?>
+
+		<div class="d-flex border mt-5">
+			<div class="">
+				<div class="">
+					<div class="d-flex flex-column gap-3">
+						<div class="d-flex flex-column">
+							<label for="food1">Nome:</label>
+							<input class="form-control" type="search" id="food1">
+						</div>
+						<div class="d-flex flex-column col-3">
+							<label>Carb:</label>
+							<input class="" type="text" id="carbResult1" readonly>
+						</div>
+						<div class="d-flex flex-column col-3">
+							<label>Prot:</label>
+							<input class="col-12" type="text" id="protResult1" readonly>
+						</div>
+						<div class="d-flex flex-column col-3">
+							<label>Gord:</label>
+							<input class="col-12" type="text" id="gordResult1" readonly>
+						</div>
+						<div class="d-flex flex-column col-4">
+							<label>Kcal:</label>
+							<input class="col-12" type="text" id="kcalResult1" readonly>
+						</div>
 					</div>
 				</div>
 			</div>
-
 			<div class="d-flex justify-content-around col-sm-4 col-lg-6">
 				<div class="">
 					<div class="d-flex flex-column">
@@ -144,8 +140,6 @@
 					</div>
 				</div>
 			</div>
-
-
 		</div>
 	</main>
 
@@ -178,15 +172,14 @@
 		// } else {console.log('n existe')}
 
 
-		// const inputs = document.querySelectorAll('input');
+		const input = document.querySelector('#ovo');
 
-		// inputs.forEach(input => {
-		// 	input.addEventListener('keyup', (ev) => {
-		// 		if (input.value.length > 2) {
-
-		// 		}
-		// 	})
-		// });
+		input.addEventListener('keyup', (ev) => {
+			if (input.value.length > 2) {
+				console.log(`<?php $teste = $this->teste();
+				print_r($teste) ?>`)
+			}
+		});
 	</script>
 </body>
 
