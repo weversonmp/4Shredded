@@ -36,6 +36,10 @@ body {
 	font-family: var(--exo-2-m);
 }
 
+main {
+	padding: 8em;
+}
+
 .body-dark-gray-1 {
 	background-color: var(--body-dark-gray-1);
 }

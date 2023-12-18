@@ -24,8 +24,21 @@
 	<link rel="stylesheet" href="<?= base_url() ?>vendor/fontawesome/css/brands.css">
 	<link rel="stylesheet" href="<?= base_url() ?>vendor/fontawesome/css/regular.css"> -->
 
+	<link rel="stylesheet" href="<?= base_url() ?>css/jquery-ui.css">
+
 	<!-- Local CSS -->
 	<link rel="stylesheet" href="<?= base_url() ?>css/styles.css">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+	<script>
+		$(function() {
+			$("#ovo1").autocomplete({
+				source: availableTags
+			});
+		});
+	</script>
 
 </head>
 
@@ -63,7 +76,7 @@
 		</nav>
 	</header>
 
-	<main class="w-75 m-auto pt-4">
+	<main class="m-auto pt-4">
 		<h2 class="">Refeições</h2>
 
 		<?php if (!$alimentosAdicionados) : ?>
@@ -83,72 +96,6 @@
 			</div>
 		<?php endif ?>
 
-		<div class="d-flex border mt-5">
-			<div class="">
-				<div class="">
-					<div class="d-flex flex-column gap-3">
-						<div class="d-flex flex-column">
-							<label for="food1">Nome:</label>
-							<input class="form-control" type="search" id="food1">
-						</div>
-						<div class="d-flex flex-column col-3">
-							<label>Carb:</label>
-							<input class="" type="text" id="carbResult1" readonly>
-						</div>
-						<div class="d-flex flex-column col-3">
-							<label>Prot:</label>
-							<input class="col-12" type="text" id="protResult1" readonly>
-						</div>
-						<div class="d-flex flex-column col-3">
-							<label>Gord:</label>
-							<input class="col-12" type="text" id="gordResult1" readonly>
-						</div>
-						<div class="d-flex flex-column col-4">
-							<label>Kcal:</label>
-							<input class="col-12" type="text" id="kcalResult1" readonly>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="d-flex justify-content-around col-sm-4 col-lg-6">
-				<div class="">
-					<div class="d-flex flex-column">
-						<label for="">Meta Carb:</label>
-						<input type="text" class="col-sm-5">
-					</div>
-					<div class="d-flex flex-column">
-						<label for="">Meta Prot:</label>
-						<input type="text" class="col-sm-5">
-					</div>
-					<div class="d-flex flex-column">
-						<label for="">Meta Gord:</label>
-						<input type="text" class="col-sm-5">
-					</div>
-					<div class="d-flex flex-column">
-						<label for="">Meta Kcal:</label>
-						<input type="text" class="col-sm-5">
-					</div>
-				</div>
-				<div>
-					<div class="d-flex flex-column">
-						<label for="">Carb Alcançado:</label>
-						<input type="text" class="col-sm-5">
-					</div>
-					<div class="d-flex flex-column">
-						<label for="">Prot Alcançado:</label>
-						<input type="text" class="col-sm-5">
-					</div>
-					<div class="d-flex flex-column">
-						<label for="">Gord Alcançado:</label>
-						<input type="text" class="col-sm-5">
-					</div>
-					<div class="d-flex flex-column">
-						<label for="">Kcal Alcançado:</label>
-						<input type="text" class="col-sm-5">
-					</div>
-				</div>
-			</div>
-		</div>
 	</main>
 
 
@@ -163,8 +110,6 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
 	<!-- Font Awesome -->
 	<!-- <script src="https://kit.fontawesome.com/d412feebf6.js" crossorigin="anonymous"></script> -->
@@ -207,10 +152,6 @@
 				console.log(values)
 
 			}
-		});
-
-		$("#ovo1").autocomplete({
-			source: '<?= $tb_foods ?>'
 		});
 	</script>
 </body>

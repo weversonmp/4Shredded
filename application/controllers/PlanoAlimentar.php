@@ -28,6 +28,7 @@ class PlanoAlimentar extends CI_Controller
 
 	public function foodsAutoComplete()
 	{
-		$this->alimentos->
+		$res = $this->alimentos->getAutocompleteFood('ovo');
+		print_r($res);
 	}
 }
