@@ -89,7 +89,7 @@ main {
 	width: 15.72em;
 }
 
-#ovo1 {
+#food_name {
 	background: none;
 	border: none;
 	border-bottom: 2px solid rgba(128, 128, 128, 0.4);
@@ -100,7 +100,7 @@ main {
 	transition: 500ms;
 }
 
-#ovo1:focus {
+#food_name:focus {
 	outline: none;
 	border-bottom: 2px solid rgba(190, 78, 33, 0.795);
 }

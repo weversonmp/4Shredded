@@ -9,6 +9,7 @@ class PlanoAlimentar extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->helper('url');
 		$this->load->model('PlanoAlimentar_model', 'alimentos');
 		$this->foodReturned = $this->alimentos->getAutocompleteFood($this->food_name);
 	}
@@ -28,7 +29,10 @@ class PlanoAlimentar extends CI_Controller
 
 	public function foodsAutoComplete()
 	{
-		$res = $this->alimentos->getAutocompleteFood('ovo');
-		print_r($res);
+		$food_name = $this->input->post();
+
+		$res = $this->alimentos->getAutocompleteFood($food_name);
+
+		echo json_encode($res);
 	}
 }

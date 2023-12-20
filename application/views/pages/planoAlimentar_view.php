@@ -32,14 +32,6 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
-	<script>
-		$(function() {
-			$("#ovo1").autocomplete({
-				source: availableTags
-			});
-		});
-	</script>
-
 </head>
 
 <body d-flex">
@@ -82,7 +74,8 @@
 		<?php if (!$alimentosAdicionados) : ?>
 			<div class="mt-3" id="foodCard">
 				<div class=" card-body">
-					<input id="ovo1" class="mb-2" value="<?= $tb_foods[0]['food_name'] ?>">
+					<input type="text" id="food_name" class="mb-2">
+					<input type="text" id="id_food" class="mb-2" hidden>
 					<div class="d-flex gap-4">
 						<h6 class="card-subtitle mb-2 text-muted">C: </h6>
 						<h6 class="card-subtitle mb-2 text-muted">P: </h6>
@@ -114,22 +107,37 @@
 	<!-- Font Awesome -->
 	<!-- <script src="https://kit.fontawesome.com/d412feebf6.js" crossorigin="anonymous"></script> -->
 
-	<?php
-	function getInputValue()
-	{
-		echo "<script>
-				function getInputValue(idOfInput = 'ovo1') {
-					const input = document.querySelector(`#ovo1`);
-					return input.value;
-				}
-
-				let inputValueGot = getInputValue();
-				</script>
-			";
-	}
-	?>
 
 	<script defer>
+		$(document).ready(function() {
+
+			// Initialize
+			$("#food_name").autocomplete({
+				source: function(request, response) {
+					// Fetch data
+					$.ajax({
+						url: "<?= base_url() ?>planoalimentar/foodsAutoComplete",
+						type: 'post',
+						dataType: "json",
+						data: {
+							search: request.term
+						},
+						success: function(data) {
+							response(data);
+						}
+					});
+				},
+				select: function(event, ui) {
+					// Set selection
+
+					$('#food_name').val(ui.item.label); // display the selected text
+					$('#id_food').val(ui.item.value); // save selected id to input
+					return false;
+				}
+			});
+
+		});
+
 		// const teste = document.querySelector('#testelink')
 		// if (teste.attributes['navbar-icon-off-focus']) {
 		// 	console.log('existe');
@@ -143,16 +151,16 @@
 
 
 
-		const input = document.querySelector('#ovo1');
+		// const input = document.querySelector('#ovo1');
 
-		input.addEventListener('keyup', (ev) => {
-			sessionStorage.setItem("inputValueToAdd", input.value);
-			if (input.value.length > 2) {
-				let values = sessionStorage.getItem("inputValueToAdd")
-				console.log(values)
+		// input.addEventListener('keyup', (ev) => {
+		// 	sessionStorage.setItem("inputValueToAdd", input.value);
+		// 	if (input.value.length > 2) {
+		// 		let values = sessionStorage.getItem("inputValueToAdd")
+		// 		console.log(values)
 
-			}
-		});
+		// 	}
+		// });
 	</script>
 </body>
 

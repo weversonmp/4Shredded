@@ -16,13 +16,29 @@ class PlanoAlimentar_model extends CI_Model
 		}
 	}
 
-	public function getAutocompleteFood($food_name = '')
+	public function getAutocompleteFood($food_name)
 	{
-		try {
-			return $this->db->query("select * FROM tb_foods WHERE food_name LIKE '%{$food_name}%'")->result_array();
-		} catch (Exception $e) {
-			log_message('error: ', $e->getMessage());
-			return;
+		$res = array();
+
+		if (isset($food_name['search'])) {
+			try {
+				$this->db->select('*');
+				$this->db->where("food_name LIKE '%{$food_name['search']}%'");
+
+				$records = $this->db->get("tb_foods")->result();
+
+				foreach ($records as $row) {
+					$res[] = array(
+						'value' => $row->id,
+						'label' => $row->food_name
+					);
+				}
+
+				return $res;
+			} catch (Exception $e) {
+				log_message('error: ', $e->getMessage());
+				return;
+			}
 		}
 	}
 }
