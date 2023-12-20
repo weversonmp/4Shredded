@@ -76,12 +76,22 @@
 				<div class=" card-body">
 					<input type="text" id="food_name" class="mb-2">
 					<input type="text" id="id_food" class="mb-2" hidden>
-					<div class="d-flex gap-4">
-						<h6 class="card-subtitle mb-2 text-muted">C: </h6>
-						<h6 class="card-subtitle mb-2 text-muted">P: </h6>
-						<h6 class="card-subtitle mb-2 text-muted">G: </h6>
-						<h6 class="card-subtitle mb-2 text-muted">Kcal: </h6>
+
+					<div class="d-flex align-items-center gap-2 my-2">
+						<h6 class="card-subtitle text-muted">C:</h6>
+						<input type="text" id="food_carb" class="food_macro_kcal_input" readonly>
+						<h6 class="card-subtitle text-muted">P: </h6>
+						<input type="text" id="food_prot" class="food_macro_kcal_input" readonly>
+						<h6 class="card-subtitle text-muted">G: </h6>
+						<input type="text" id="food_fat" class="food_macro_kcal_input" readonly>
+
 					</div>
+
+					<div class="d-flex align-items-center gap-2">
+						<h6 class="card-subtitle text-muted">Kcal: </h6>
+						<input type="text" id="food_kcal" class="food_macro_kcal_input" readonly>
+					</div>
+
 					<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
 					<a href="#" class="card-link">Info</a>
 					<a href="#" class="card-link">Remover</a>
@@ -108,7 +118,7 @@
 	<!-- <script src="https://kit.fontawesome.com/d412feebf6.js" crossorigin="anonymous"></script> -->
 
 
-	<script defer>
+	<script>
 		$(document).ready(function() {
 
 			// Initialize
@@ -130,8 +140,12 @@
 				select: function(event, ui) {
 					// Set selection
 
-					$('#food_name').val(ui.item.label); // display the selected text
-					$('#id_food').val(ui.item.value); // save selected id to input
+					$('#food_name').val(ui.item.label);
+					$('#id_food').val(ui.item.value);
+					$('#food_carb').val(ui.item.carb);
+					$('#food_prot').val(ui.item.prot);
+					$('#food_fat').val(ui.item.fat);
+					$('#food_kcal').val(ui.item.kcal);
 					return false;
 				}
 			});

@@ -30,7 +30,11 @@ class PlanoAlimentar_model extends CI_Model
 				foreach ($records as $row) {
 					$res[] = array(
 						'value' => $row->id,
-						'label' => $row->food_name
+						'label' => $row->food_name,
+						'carb' => $row->carb,
+						'prot' => $row->prot,
+						'fat' => $row->fat,
+						'kcal' => $row->kcal,
 					);
 				}
 

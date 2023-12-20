@@ -104,3 +104,18 @@ main {
 	outline: none;
 	border-bottom: 2px solid rgba(190, 78, 33, 0.795);
 }
+
+.food_macro_kcal_input {
+	width: 2.5em;
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+	outline: none;
+	border: 1px solid red;
+	border: none;
+	color: var(--navbar-icon-off-focus);
+}
+
+#food_kcal {
+	width: 4.5em;
+}
