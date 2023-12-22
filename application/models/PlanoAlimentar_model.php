@@ -23,7 +23,7 @@ class PlanoAlimentar_model extends CI_Model
 		if (isset($food_name['search'])) {
 			try {
 				$this->db->select('*');
-				$this->db->where("food_name LIKE '%{$food_name['search']}%'");
+				$this->db->where("food_name LIKE '%{$food_name['search']}%' LIMIT 10");
 
 				$records = $this->db->get("tb_foods")->result();
 

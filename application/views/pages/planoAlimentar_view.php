@@ -35,7 +35,7 @@
 </head>
 
 <body d-flex">
-	<header class="d-flex flex-column position-absolute  vh-100 flex-shrink-0 navbar-dark-gray" style="width: 4.5rem;" id="idheader">
+	<header class="d-flex flex-column position-fixed vh-100 flex-shrink-0 navbar-dark-gray" style="width: 4.5rem;" id="idheader">
 		<nav class="d-flex flex-column text-center h-100 my-4 justify-content-between">
 			<div class="d-flex flex-column">
 				<div class="mb-5 mt-3">
@@ -69,34 +69,50 @@
 	</header>
 
 	<main class="m-auto pt-4">
-		<h2 class="">Refeições</h2>
+		<div class="d-flex gap-5">
+			<h2 class="align-self-center mb-0">Refeições</h2>
+			<button id="addNewFood">
+				<i class="fa-solid fa-circle-plus align-self-center" style="color: #ffffff; font-size: 2.5em;"></i>
+			</button>
+		</div>
 
-		<?php if (!$alimentosAdicionados) : ?>
-			<div class="mt-3" id="foodCard">
-				<div class=" card-body">
-					<input type="text" id="food_name" class="mb-2">
-					<input type="text" id="id_food" class="mb-2" hidden>
+		<?php if (count($foodSeted['foodIndex']) > 0) : ?>
 
-					<div class="d-flex align-items-center gap-2 my-2">
-						<h6 class="card-subtitle text-muted">C:</h6>
-						<input type="text" id="food_carb" class="food_macro_kcal_input" readonly>
-						<h6 class="card-subtitle text-muted">P: </h6>
-						<input type="text" id="food_prot" class="food_macro_kcal_input" readonly>
-						<h6 class="card-subtitle text-muted">G: </h6>
-						<input type="text" id="food_fat" class="food_macro_kcal_input" readonly>
+			<div class="">
+				<div class="d-flex flex-md-column flex-lg-row">
+					<div class="me-3"> <!-- COLUMN 1 -->
+						<div class="mt-3" id="foodCard">
+							<div class=" card-body">
+								<input type="text" id="food_name" class="mb-2" data-food_name>
+								<input type="text" id="id_food" class="mb-2" hidden>
+								<div class="d-flex align-items-center align-content-center gap-2 my-2">
+									<h6 class=" card-subtitle text-muted m-0">C:</h6>
+									<input type="text" id="food_carb" class="food_macro_kcal_input" readonly>
+									<h6 class="card-subtitle text-muted m-0">P:</h6>
+									<input type="text" id="food_prot" class="food_macro_kcal_input" readonly>
+									<h6 class="card-subtitle text-muted m-0">G:</h6>
+									<input type="text" id="food_fat" class="food_macro_kcal_input" readonly>
+								</div>
+								<div class="d-flex align-items-center gap-2">
+									<h6 class="card-subtitle text-muted m-0">Kcal:</h6>
+									<input type="text" id="food_kcal" class="food_macro_kcal_input" readonly>
+								</div>
+								<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+								<a href="#" class="card-link">Info</a>
+								<a href="#" class="card-link">Remover</a>
+							</div>
+						</div>
 
 					</div>
 
-					<div class="d-flex align-items-center gap-2">
-						<h6 class="card-subtitle text-muted">Kcal: </h6>
-						<input type="text" id="food_kcal" class="food_macro_kcal_input" readonly>
-					</div>
+					<div class=""> <!-- COLUMN 2 -->
 
-					<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-					<a href="#" class="card-link">Info</a>
-					<a href="#" class="card-link">Remover</a>
+					</div>
 				</div>
+
+
 			</div>
+
 		<?php endif ?>
 
 	</main>
@@ -118,64 +134,7 @@
 	<!-- <script src="https://kit.fontawesome.com/d412feebf6.js" crossorigin="anonymous"></script> -->
 
 
-	<script>
-		$(document).ready(function() {
 
-			// Initialize
-			$("#food_name").autocomplete({
-				source: function(request, response) {
-					// Fetch data
-					$.ajax({
-						url: "<?= base_url() ?>planoalimentar/foodsAutoComplete",
-						type: 'post',
-						dataType: "json",
-						data: {
-							search: request.term
-						},
-						success: function(data) {
-							response(data);
-						}
-					});
-				},
-				select: function(event, ui) {
-					// Set selection
-
-					$('#food_name').val(ui.item.label);
-					$('#id_food').val(ui.item.value);
-					$('#food_carb').val(ui.item.carb);
-					$('#food_prot').val(ui.item.prot);
-					$('#food_fat').val(ui.item.fat);
-					$('#food_kcal').val(ui.item.kcal);
-					return false;
-				}
-			});
-
-		});
-
-		// const teste = document.querySelector('#testelink')
-		// if (teste.attributes['navbar-icon-off-focus']) {
-		// 	console.log('existe');
-		// } else {console.log('n existe')}
-
-		// teste.attributes.removeNamedItem('navbar-icon-off-focus')
-
-		// if (teste.attributes['navbar-icon-off-focus']) {
-		// 	console.log('existe');
-		// } else {console.log('n existe')}
-
-
-
-		// const input = document.querySelector('#ovo1');
-
-		// input.addEventListener('keyup', (ev) => {
-		// 	sessionStorage.setItem("inputValueToAdd", input.value);
-		// 	if (input.value.length > 2) {
-		// 		let values = sessionStorage.getItem("inputValueToAdd")
-		// 		console.log(values)
-
-		// 	}
-		// });
-	</script>
 </body>
 
 </html>

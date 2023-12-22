@@ -23,8 +23,12 @@ class PlanoAlimentar extends CI_Controller
 
 		$data['title'] = "Plano Alimentar";
 		$data['tb_foods'] = $this->alimentos->getAllFoods();
-		$data['alimentosAdicionados'] = '';
+		$data['foodSeted'] = array(
+			"foodIndex" => [1],
+		);
 		$this->load->view('pages/planoAlimentar_view', $data);
+		$this->load->view('templates/autocomplete_function', $data);
+		$this->load->view('templates/addFoodPlan_function', $data);
 	}
 
 	public function foodsAutoComplete()

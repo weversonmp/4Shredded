@@ -78,6 +78,11 @@ main {
 	border-radius: 50%;
 }
 
+#addNewFood {
+	background-color: transparent;
+	border: none;
+}
+
 #foodCard {
 	background-color: var(--body-dark-gray-2);
 	width: 18rem;
@@ -113,7 +118,7 @@ main {
 	outline: none;
 	border: 1px solid red;
 	border: none;
-	color: var(--navbar-icon-off-focus);
+	color: lightgray;
 }
 
 #food_kcal {
