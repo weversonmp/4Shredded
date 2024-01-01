@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class PlanoAlimentar extends CI_Controller
+require APPPATH . 'controllers\BaseController.php';
+
+class PlanoAlimentar extends BaseController
 {
 	public $food_name = '';
 	public $foodReturned;
