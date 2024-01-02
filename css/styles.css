@@ -94,6 +94,10 @@ main {
 	width: 15.72em;
 }
 
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
 #card_body > [data-food_name] {
 	background: none;
 	border: none;
@@ -106,6 +110,22 @@ main {
 }
 
 #card_body > [data-food_name]:focus {
+	outline: none;
+	border-bottom: 2px solid rgba(190, 78, 33, 0.795);
+}
+
+.number-wrapper > [data-food_qnt] {
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgba(128, 128, 128, 0.4);
+	width: 3em;
+	color: white;
+	font-family: var(--exo-2-sb);
+	font-size: 1em;
+	transition: 500ms;
+}
+
+.number-wrapper > [data-food_qnt]:focus {
 	outline: none;
 	border-bottom: 2px solid rgba(190, 78, 33, 0.795);
 }
