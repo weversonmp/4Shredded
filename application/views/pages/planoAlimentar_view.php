@@ -80,29 +80,32 @@
 		<div class="">
 			<div class="d-flex flex-md-column flex-lg-row">
 				<div class="me-3"> <!-- COLUMN 1 -->
-					<?php if (count($foodSeted['foodIndex']) >= 0) : ?>
+					<?php if (count($foodSeted["foodIndex"]) >= 0) : ?>
 
-						<div class="mt-3" id="foodCard">
-							<div class=" card-body d-flex gap-2">
-								<input type="text" id="food_name" class="mb-2 me-3" data-food_name>
-								<input type="text" id="id_food" class="mb-2" hidden>
-								<div class="d-flex align-items-center align-content-center gap-2 my-2">
-									<h6 class=" card-subtitle text-muted m-0">C:</h6>
-									<input type="text" id="food_carb" class="food_macro_kcal_input" readonly>
-									<h6 class="card-subtitle text-muted m-0">P:</h6>
-									<input type="text" id="food_prot" class="food_macro_kcal_input" readonly>
-									<h6 class="card-subtitle text-muted m-0">G:</h6>
-									<input type="text" id="food_fat" class="food_macro_kcal_input" readonly>
+						<?php foreach ($foodSeted["foodIndex"] as $food) : ?>
+							<div class="mt-3" id="foodCard">
+								<div class=" card-body d-flex gap-2" id="card_body">
+									<input type="text" id="food_name_<?= $food ?>" class="mb-2 me-3" data-food_name>
+									<input type="text" id="id_food_<?= $food ?>" class="mb-2" hidden>
+									<div class="d-flex align-items-center align-content-center gap-2 my-2">
+										<h6 class=" card-subtitle text-muted m-0">C:</h6>
+										<input type="text" id="food_carb_<?= $food ?>" class="food_macro_kcal_input" readonly>
+										<h6 class="card-subtitle text-muted m-0">P:</h6>
+										<input type="text" id="food_prot_<?= $food ?>" class="food_macro_kcal_input" readonly>
+										<h6 class="card-subtitle text-muted m-0">G:</h6>
+										<input type="text" id="food_fat_<?= $food ?>" class="food_macro_kcal_input" readonly>
+									</div>
+									<div class="d-flex align-items-center gap-2">
+										<h6 class="card-subtitle text-muted m-0">Kcal:</h6>
+										<input type="text" id="food_kcal_<?= $food ?>" class="food_macro_kcal_input" readonly>
+									</div>
+									<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+									<a href="#" class="card-link">I</a>
+									<a href="#" class="card-link">X</a>
 								</div>
-								<div class="d-flex align-items-center gap-2">
-									<h6 class="card-subtitle text-muted m-0">Kcal:</h6>
-									<input type="text" id="food_kcal" class="food_macro_kcal_input" readonly>
-								</div>
-								<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-								<a href="#" class="card-link">I</a>
-								<a href="#" class="card-link">X</a>
 							</div>
-						</div>
+						<?php endforeach ?>
+
 					<?php endif ?>
 				</div>
 
