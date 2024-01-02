@@ -3,7 +3,7 @@
 		<?php foreach ($foodSeted["foodIndex"] as $food) : ?>
 
 			$("#food_name_<?= $food ?>").keyup(function() {
-				$("#food_name_<?= $food ?>]").autocomplete({
+				$("#food_name_<?= $food ?>").autocomplete({
 					source: function(request, response) {
 						// Fetch data
 						$.ajax({

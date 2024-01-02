@@ -26,7 +26,7 @@ class PlanoAlimentar extends BaseController
 		$data['title'] = "Plano Alimentar";
 		$data['tb_foods'] = $this->alimentos->getAllFoods();
 		$data['foodSeted'] = array(
-			"foodIndex" => [1, 2, 3],
+			"foodIndex" => [1,2,3,4],
 		);
 		$this->load->view('pages/planoAlimentar_view', $data);
 		$this->load->view('templates/autocomplete_function', $data);
