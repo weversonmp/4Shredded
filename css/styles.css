@@ -94,12 +94,12 @@ hr {
 	width: 80%;
 }
 
-#collpaseFood {
+/* #collapseFood_1 {
 	background-color: var(--body-dark-gray-1);
 	width: 41rem;
 	padding: 1.5em;
 	border-radius: 5px;
-}
+} */
 
 #foodCard {
 	background-color: var(--body-dark-gray-2);

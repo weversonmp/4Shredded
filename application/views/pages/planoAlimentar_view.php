@@ -84,12 +84,15 @@
 					<div class="d-flex justify-content-between border-1 mt-2 btn-collapse" id="ref_<?= $food ?>">
 						<h5>Ref <?= $food ?></h5>
 						<hr>
-						<button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collpaseFood" aria-expanded="false" aria-controls="collapseExample" onclick="teste()">
+						<a href="#" class="d-flex flex-column justify-content-center ms-3">
+							<i class="fa-solid fa-square-plus" style="color: white"></i>
+						</a>
+						<button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFood_<?= $food ?>" aria-expanded="false" aria-controls="collapseExample" onclick="teste()">
 							<i class="fa-solid fa-circle-chevron-right" style="color: white"></i>
 						</button>
 					</div>
 
-					<div class="collapse" id="collpaseFood">
+					<div class="collapse" id="collapseFood_<?= $food ?>" data-collapse>
 						<div class="" id="foodCard">
 							<div class=" card-body d-flex gap-2" id="card_body">
 								<span class="number-wrapper"><input class="mb-2 me-1 text-center " type="number" name="input_qnt_<?= $food ?>" id="input_qnt_<?= $food ?>" value="1" data-food_qnt max="99"></span>
