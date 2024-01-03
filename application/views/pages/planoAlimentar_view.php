@@ -69,55 +69,56 @@
 	</header>
 
 	<main class="">
-		<div class="d-flex gap-5">
+		<div class="d-flex gap-3">
 			<h2 class="align-self-center mb-0">Refeições</h2>
 			<button id="addNewFood">
 				<i class="fa-solid fa-circle-plus align-self-center" style="color: #ffffff; font-size: 2.5em;"></i>
 			</button>
 		</div>
 
-		<div class="d-flex row">
+		<div class="d-flex flex-row flex-wrap">
 
 			<?php if (count($foodSeted["foodIndex"]) >= 0) : ?>
 				<?php foreach ($foodSeted["foodIndex"] as $food) : ?>
 
-					<div class="d-flex justify-content-between border-1 mt-2 btn-collapse" id="ref_<?= $food ?>">
-						<h5>Ref <?= $food ?></h5>
-						<hr>
-						<a href="#" class="d-flex flex-column justify-content-center ms-3">
-							<i class="fa-solid fa-square-plus" style="color: white"></i>
-						</a>
-						<button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFood_<?= $food ?>" aria-expanded="false" aria-controls="collapseExample" onclick="teste()">
-							<i class="fa-solid fa-circle-chevron-right" style="color: white"></i>
-						</button>
-					</div>
-
-					<div class="collapse" id="collapseFood_<?= $food ?>" data-collapse>
-						<div class="" id="foodCard">
-							<div class=" card-body d-flex gap-2" id="card_body">
-								<span class="number-wrapper"><input class="mb-2 me-1 text-center " type="number" name="input_qnt_<?= $food ?>" id="input_qnt_<?= $food ?>" value="1" data-food_qnt max="99"></span>
-								<span>x</span>
-								<input type="text" id="food_name_<?= $food ?>" class="mb-2 me-3" data-food_name>
-								<input type="text" id="id_food_<?= $food ?>" class="mb-2" hidden>
-								<div class="d-flex align-items-center align-content-center gap-2 my-2">
-									<h6 class=" card-subtitle text-muted m-0">C:</h6>
-									<input type="text" id="food_carb_<?= $food ?>" class="food_macro_kcal_input" readonly>
-									<h6 class="card-subtitle text-muted m-0">P:</h6>
-									<input type="text" id="food_prot_<?= $food ?>" class="food_macro_kcal_input" readonly>
-									<h6 class="card-subtitle text-muted m-0">G:</h6>
-									<input type="text" id="food_fat_<?= $food ?>" class="food_macro_kcal_input" readonly>
+					<div class="a">
+						<div class="d-flex justify-content-between border-1 mt-2 btn-collapse" id="ref_<?= $food ?>">
+							<h5>Ref <?= $food ?></h5>
+							<hr>
+							<a href="#" class="d-flex flex-column justify-content-center ms-3">
+								<i class="fa-solid fa-square-plus" style="color: white"></i>
+							</a>
+							<button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFood_<?= $food ?>" aria-expanded="false" aria-controls="collapseExample" onclick="teste()">
+								<i class="fa-solid fa-circle-chevron-right" style="color: white"></i>
+							</button>
+						</div>
+						<div class="collapse" id="collapseFood_<?= $food ?>" data-collapse>
+							<div class="" id="foodCard">
+								<div class=" card-body d-flex gap-2" id="card_body">
+									<span class="number-wrapper"><input class="mb-2 me-1 text-center " type="number" name="input_qnt_<?= $food ?>" id="input_qnt_<?= $food ?>" value="1" data-food_qnt max="99"></span>
+									<span>x</span>
+									<input type="text" id="food_name_<?= $food ?>" class="mb-2 me-3" data-food_name>
+									<input type="text" id="id_food_<?= $food ?>" class="mb-2" hidden>
+									<div class="d-flex align-items-center align-content-center gap-2 my-2">
+										<h6 class=" card-subtitle text-muted m-0">C:</h6>
+										<input type="text" id="food_carb_<?= $food ?>" class="food_macro_kcal_input" readonly>
+										<h6 class="card-subtitle text-muted m-0">P:</h6>
+										<input type="text" id="food_prot_<?= $food ?>" class="food_macro_kcal_input" readonly>
+										<h6 class="card-subtitle text-muted m-0">G:</h6>
+										<input type="text" id="food_fat_<?= $food ?>" class="food_macro_kcal_input" readonly>
+									</div>
+									<div class="d-flex align-items-center gap-2">
+										<h6 class="card-subtitle text-muted m-0">Kcal:</h6>
+										<input type="text" id="food_kcal_<?= $food ?>" class="food_macro_kcal_input me-3" readonly>
+									</div>
+									<!-- <div class="dropdown font-sans-serif">
+											<a class="btn btn-outline-secondary dropdown-toggle" id="dropdownMenuLink" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+											<div class="dropdown-menu dropdown-menu-end py-0" aria-labelledby="dropdownMenuLink">
+												<a class="dropdown-item" href="#">Info</a>
+												<a class="dropdown-item" href="#">Remove</a>
+											</div>
+										</div> -->
 								</div>
-								<div class="d-flex align-items-center gap-2">
-									<h6 class="card-subtitle text-muted m-0">Kcal:</h6>
-									<input type="text" id="food_kcal_<?= $food ?>" class="food_macro_kcal_input me-3" readonly>
-								</div>
-								<!-- <div class="dropdown font-sans-serif">
-										<a class="btn btn-outline-secondary dropdown-toggle" id="dropdownMenuLink" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-										<div class="dropdown-menu dropdown-menu-end py-0" aria-labelledby="dropdownMenuLink">
-											<a class="dropdown-item" href="#">Info</a>
-											<a class="dropdown-item" href="#">Remove</a>
-										</div>
-									</div> -->
 							</div>
 						</div>
 					</div>
