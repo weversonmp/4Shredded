@@ -36,10 +36,6 @@ body {
 	font-family: var(--exo-2-m);
 }
 
-main {
-	padding: 8em;
-}
-
 .body-dark-gray-1 {
 	background-color: var(--body-dark-gray-1);
 }
@@ -83,9 +79,31 @@ main {
 	border: none;
 }
 
+main {
+	padding-left: 7em;
+	padding-top: 1em;
+	width: 100vw;
+}
+
+.btn-collapse {
+	width: 41rem;
+}
+
+hr {
+	border-bottom: 2px solid white;
+	width: 80%;
+}
+
+#collpaseFood {
+	background-color: var(--body-dark-gray-1);
+	width: 41rem;
+	padding: 1.5em;
+	border-radius: 5px;
+}
+
 #foodCard {
 	background-color: var(--body-dark-gray-2);
-	width: 35rem;
+	width: 38.5rem;
 	border: 1px solid rgba(128, 128, 128, 0.318);
 	border-radius: 10px;
 }
