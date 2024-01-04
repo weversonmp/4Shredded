@@ -76,7 +76,7 @@
 			</button>
 		</div>
 
-		<div class="d-flex flex-row flex-wrap">
+		<div class="d-flex flex-wrap">
 
 			<?php if (count($foodSeted["foodIndex"]) >= 0) : ?>
 				<?php foreach ($foodSeted["foodIndex"] as $food) : ?>
@@ -85,14 +85,28 @@
 						<div class="d-flex justify-content-between border-1 mt-2 btn-collapse" id="ref_<?= $food ?>">
 							<h5>Ref <?= $food ?></h5>
 							<hr>
-							<a href="#" class="d-flex flex-column justify-content-center ms-3">
+							<a href="#" class="d-flex flex-column justify-content-center ms-3 close_food_modal_<?= $food ?>">
 								<i class="fa-solid fa-square-plus" style="color: white"></i>
 							</a>
-							<button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFood_<?= $food ?>" aria-expanded="false" aria-controls="collapseExample" onclick="teste()">
+							<button class="btn food_modal_<?= $food ?>" type="button">
 								<i class="fa-solid fa-circle-chevron-right" style="color: white"></i>
 							</button>
 						</div>
-						<div class="collapse" id="collapseFood_<?= $food ?>" data-collapse>
+
+						<style>
+							#dialogteste::backdrop {
+								background-color: darkgray;
+								opacity: 30%;
+								width: 100vw;
+								height: 100vh;
+							}
+
+							#dialogteste {
+								height: 80vh;
+							}
+						</style>
+
+						<dialog id="dialogteste">
 							<div class="" id="foodCard">
 								<div class=" card-body d-flex gap-2" id="card_body">
 									<span class="number-wrapper"><input class="mb-2 me-1 text-center " type="number" name="input_qnt_<?= $food ?>" id="input_qnt_<?= $food ?>" value="1" data-food_qnt max="99"></span>
@@ -111,16 +125,13 @@
 										<h6 class="card-subtitle text-muted m-0">Kcal:</h6>
 										<input type="text" id="food_kcal_<?= $food ?>" class="food_macro_kcal_input me-3" readonly>
 									</div>
-									<!-- <div class="dropdown font-sans-serif">
-											<a class="btn btn-outline-secondary dropdown-toggle" id="dropdownMenuLink" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-											<div class="dropdown-menu dropdown-menu-end py-0" aria-labelledby="dropdownMenuLink">
-												<a class="dropdown-item" href="#">Info</a>
-												<a class="dropdown-item" href="#">Remove</a>
-											</div>
-										</div> -->
 								</div>
 							</div>
-						</div>
+						</dialog>
+
+
+
+
 					</div>
 
 				<?php endforeach ?>
@@ -151,9 +162,11 @@
 	<!-- <script src="https://kit.fontawesome.com/d412feebf6.js" crossorigin="anonymous"></script> -->
 
 	<script>
-		let teste = () => {
-
-		}
+		const foodModal = document.querySelector('#dialogteste')
+		const openModal = document.querySelector('.food_modal_1')
+		openModal.addEventListener('click', (ev) => {
+			foodModal.showModal()
+		})
 	</script>
 
 </body>
