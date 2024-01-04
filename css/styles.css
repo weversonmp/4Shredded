@@ -94,12 +94,22 @@ hr {
 	width: 80%;
 }
 
-/* #collapseFood_1 {
-	background-color: var(--body-dark-gray-1);
-	width: 41rem;
-	padding: 1.5em;
-	border-radius: 5px;
-} */
+#dialogteste::backdrop {
+	background-color: black;
+	opacity: 30%;
+	width: 100vw;
+	height: 100vh;
+}
+
+#dialogteste {
+	height: 90vh;
+	background-color: var(--body-dark-gray-3);
+	border: none;
+	border-top-right-radius: 30px;
+	border-end-start-radius: 30px;
+	border: 5px solid var(--body-dark-gray-1);
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.336);
+}
 
 #foodCard {
 	background-color: var(--body-dark-gray-2);

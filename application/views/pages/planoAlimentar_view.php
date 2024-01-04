@@ -93,40 +93,120 @@
 							</button>
 						</div>
 
-						<style>
-							#dialogteste::backdrop {
-								background-color: darkgray;
-								opacity: 30%;
-								width: 100vw;
-								height: 100vh;
-							}
-
-							#dialogteste {
-								height: 80vh;
-							}
-						</style>
-
 						<dialog id="dialogteste">
-							<div class="" id="foodCard">
-								<div class=" card-body d-flex gap-2" id="card_body">
-									<span class="number-wrapper"><input class="mb-2 me-1 text-center " type="number" name="input_qnt_<?= $food ?>" id="input_qnt_<?= $food ?>" value="1" data-food_qnt max="99"></span>
-									<span>x</span>
-									<input type="text" id="food_name_<?= $food ?>" class="mb-2 me-3" data-food_name>
-									<input type="text" id="id_food_<?= $food ?>" class="mb-2" hidden>
-									<div class="d-flex align-items-center align-content-center gap-2 my-2">
-										<h6 class=" card-subtitle text-muted m-0">C:</h6>
-										<input type="text" id="food_carb_<?= $food ?>" class="food_macro_kcal_input" readonly>
-										<h6 class="card-subtitle text-muted m-0">P:</h6>
-										<input type="text" id="food_prot_<?= $food ?>" class="food_macro_kcal_input" readonly>
-										<h6 class="card-subtitle text-muted m-0">G:</h6>
-										<input type="text" id="food_fat_<?= $food ?>" class="food_macro_kcal_input" readonly>
+							<div class="dialog-in d-flex flex-column gap-2">
+								<div class="dialog-header d-flex justify-content-between ">
+									<button class="btn btn-outline-secondary ">+ Add Alimento</button>
+									<button class="btn btn-close-white dialogClose"><i class="fa-solid fa-xmark"></i></button>
+								</div>
+								<hr>
+								<div class="" id="foodCard">
+									<div class=" card-body d-flex gap-2" id="card_body">
+										<span class="number-wrapper"><input class="mb-2 me-1 text-center " type="number" name="input_qnt_<?= $food ?>" id="input_qnt_<?= $food ?>" value="1" data-food_qnt max="99"></span>
+										<span>x</span>
+										<input type="text" id="food_name_<?= $food ?>" class="mb-2 me-3" data-food_name>
+										<input type="text" id="id_food_<?= $food ?>" class="mb-2" hidden>
+										<div class="d-flex align-items-center align-content-center gap-2 my-2">
+											<h6 class=" card-subtitle text-muted m-0">C:</h6>
+											<input type="text" id="food_carb_<?= $food ?>" class="food_macro_kcal_input" readonly>
+											<h6 class="card-subtitle text-muted m-0">P:</h6>
+											<input type="text" id="food_prot_<?= $food ?>" class="food_macro_kcal_input" readonly>
+											<h6 class="card-subtitle text-muted m-0">G:</h6>
+											<input type="text" id="food_fat_<?= $food ?>" class="food_macro_kcal_input" readonly>
+										</div>
+										<div class="d-flex align-items-center gap-2">
+											<h6 class="card-subtitle text-muted m-0">Kcal:</h6>
+											<input type="text" id="food_kcal_<?= $food ?>" class="food_macro_kcal_input me-3" readonly>
+										</div>
 									</div>
-									<div class="d-flex align-items-center gap-2">
-										<h6 class="card-subtitle text-muted m-0">Kcal:</h6>
-										<input type="text" id="food_kcal_<?= $food ?>" class="food_macro_kcal_input me-3" readonly>
+								</div>
+
+								<div class="" id="foodCard">
+									<div class=" card-body d-flex gap-2" id="card_body">
+										<span class="number-wrapper"><input class="mb-2 me-1 text-center " type="number" name="input_qnt_<?= $food ?>" id="input_qnt_<?= $food ?>" value="1" data-food_qnt max="99"></span>
+										<span>x</span>
+										<input type="text" id="food_name_2" class="mb-2 me-3" data-food_name>
+										<input type="text" id="id_food_<?= $food ?>" class="mb-2" hidden>
+										<div class="d-flex align-items-center align-content-center gap-2 my-2">
+											<h6 class=" card-subtitle text-muted m-0">C:</h6>
+											<input type="text" id="food_carb_<?= $food ?>" class="food_macro_kcal_input" readonly>
+											<h6 class="card-subtitle text-muted m-0">P:</h6>
+											<input type="text" id="food_prot_<?= $food ?>" class="food_macro_kcal_input" readonly>
+											<h6 class="card-subtitle text-muted m-0">G:</h6>
+											<input type="text" id="food_fat_<?= $food ?>" class="food_macro_kcal_input" readonly>
+										</div>
+										<div class="d-flex align-items-center gap-2">
+											<h6 class="card-subtitle text-muted m-0">Kcal:</h6>
+											<input type="text" id="food_kcal_<?= $food ?>" class="food_macro_kcal_input me-3" readonly>
+										</div>
+									</div>
+								</div>
+
+								<div class="" id="foodCard">
+									<div class=" card-body d-flex gap-2" id="card_body">
+										<span class="number-wrapper"><input class="mb-2 me-1 text-center " type="number" name="input_qnt_<?= $food ?>" id="input_qnt_<?= $food ?>" value="1" data-food_qnt max="99"></span>
+										<span>x</span>
+										<input type="text" id="food_name_<?= $food ?>" class="mb-2 me-3" data-food_name>
+										<input type="text" id="id_food_<?= $food ?>" class="mb-2" hidden>
+										<div class="d-flex align-items-center align-content-center gap-2 my-2">
+											<h6 class=" card-subtitle text-muted m-0">C:</h6>
+											<input type="text" id="food_carb_<?= $food ?>" class="food_macro_kcal_input" readonly>
+											<h6 class="card-subtitle text-muted m-0">P:</h6>
+											<input type="text" id="food_prot_<?= $food ?>" class="food_macro_kcal_input" readonly>
+											<h6 class="card-subtitle text-muted m-0">G:</h6>
+											<input type="text" id="food_fat_<?= $food ?>" class="food_macro_kcal_input" readonly>
+										</div>
+										<div class="d-flex align-items-center gap-2">
+											<h6 class="card-subtitle text-muted m-0">Kcal:</h6>
+											<input type="text" id="food_kcal_<?= $food ?>" class="food_macro_kcal_input me-3" readonly>
+										</div>
+									</div>
+								</div>
+
+								<div class="" id="foodCard">
+									<div class=" card-body d-flex gap-2" id="card_body">
+										<span class="number-wrapper"><input class="mb-2 me-1 text-center " type="number" name="input_qnt_<?= $food ?>" id="input_qnt_<?= $food ?>" value="1" data-food_qnt max="99"></span>
+										<span>x</span>
+										<input type="text" id="food_name_<?= $food ?>" class="mb-2 me-3" data-food_name>
+										<input type="text" id="id_food_<?= $food ?>" class="mb-2" hidden>
+										<div class="d-flex align-items-center align-content-center gap-2 my-2">
+											<h6 class=" card-subtitle text-muted m-0">C:</h6>
+											<input type="text" id="food_carb_<?= $food ?>" class="food_macro_kcal_input" readonly>
+											<h6 class="card-subtitle text-muted m-0">P:</h6>
+											<input type="text" id="food_prot_<?= $food ?>" class="food_macro_kcal_input" readonly>
+											<h6 class="card-subtitle text-muted m-0">G:</h6>
+											<input type="text" id="food_fat_<?= $food ?>" class="food_macro_kcal_input" readonly>
+										</div>
+										<div class="d-flex align-items-center gap-2">
+											<h6 class="card-subtitle text-muted m-0">Kcal:</h6>
+											<input type="text" id="food_kcal_<?= $food ?>" class="food_macro_kcal_input me-3" readonly>
+										</div>
+									</div>
+								</div>
+
+								<div class="" id="foodCard">
+									<div class=" card-body d-flex gap-2" id="card_body">
+										<span class="number-wrapper"><input class="mb-2 me-1 text-center " type="number" name="input_qnt_<?= $food ?>" id="input_qnt_<?= $food ?>" value="1" data-food_qnt max="99"></span>
+										<span>x</span>
+										<input type="text" id="food_name_<?= $food ?>" class="mb-2 me-3" data-food_name>
+										<input type="text" id="id_food_<?= $food ?>" class="mb-2" hidden>
+										<div class="d-flex align-items-center align-content-center gap-2 my-2">
+											<h6 class=" card-subtitle text-muted m-0">C:</h6>
+											<input type="text" id="food_carb_<?= $food ?>" class="food_macro_kcal_input" readonly>
+											<h6 class="card-subtitle text-muted m-0">P:</h6>
+											<input type="text" id="food_prot_<?= $food ?>" class="food_macro_kcal_input" readonly>
+											<h6 class="card-subtitle text-muted m-0">G:</h6>
+											<input type="text" id="food_fat_<?= $food ?>" class="food_macro_kcal_input" readonly>
+										</div>
+										<div class="d-flex align-items-center gap-2">
+											<h6 class="card-subtitle text-muted m-0">Kcal:</h6>
+											<input type="text" id="food_kcal_<?= $food ?>" class="food_macro_kcal_input me-3" readonly>
+										</div>
 									</div>
 								</div>
 							</div>
+
+
 						</dialog>
 
 
@@ -166,6 +246,11 @@
 		const openModal = document.querySelector('.food_modal_1')
 		openModal.addEventListener('click', (ev) => {
 			foodModal.showModal()
+		})
+
+		const closeModal = document.querySelector('.dialogClose')
+		closeModal.addEventListener('click', (ev) => {
+			foodModal.close()
 		})
 	</script>
 
