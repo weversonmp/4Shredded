@@ -36,6 +36,13 @@ body {
 	font-family: var(--exo-2-m);
 }
 
+h3,
+h4,
+h5,
+span {
+	color: white;
+}
+
 .body-dark-gray-1 {
 	background-color: var(--body-dark-gray-1);
 }
@@ -46,6 +53,9 @@ body {
 
 #idheader {
 	box-shadow: black 1px 1px 10px;
+	display: flex;
+	position: absolute;
+	height: 100vh;
 }
 
 .navbar-dark-gray {
@@ -74,15 +84,14 @@ body {
 	border-radius: 50%;
 }
 
+#mainContent {
+	padding-left: 7em;
+	padding-top: 1em;
+}
+
 #addNewFood {
 	background-color: transparent;
 	border: none;
-}
-
-main {
-	padding-left: 7em;
-	padding-top: 1em;
-	width: 100vw;
 }
 
 .btn-collapse {
@@ -103,6 +112,7 @@ hr {
 
 #dialogteste {
 	height: 90vh;
+	width: 70vw;
 	background-color: var(--body-dark-gray-3);
 	border: none;
 	border-top-right-radius: 30px;
@@ -172,4 +182,11 @@ input[type="number"]::-webkit-inner-spin-button {
 
 #food_kcal {
 	width: 4.5em;
+}
+
+#idRelatorio {
+	box-shadow: black 1px 1px 10px;
+	/* display: flex; */
+	/* position: absolute; */
+	/* height: 100vh; */
 }
