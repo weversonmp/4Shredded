@@ -94,7 +94,7 @@
 						</div>
 
 						<dialog id="dialogteste">
-							<div class="dialog-in d-flex flex-column gap-2">
+							<div class="dialog-in d-flex flex-column gap-2 100vh align-content-between  ">
 								<div class="dialog-header d-flex justify-content-between ">
 									<button class="btn btn-outline-secondary ">+ Add Alimento</button>
 									<button class="btn btn-close-white dialogClose"><i class="fa-solid fa-xmark"></i></button>
@@ -204,6 +204,9 @@
 										</div>
 									</div>
 								</div>
+							</div>
+							<div class="dialog-header d-flex justify-content-between ">
+								<button class="btn btn-outline-success ">Save</button>
 							</div>
 
 
